@@ -5,14 +5,15 @@
  * @format
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, View, SafeAreaView} from 'react-native';
 
 const App = () => {
+  const [active_player,setActive_player] = useState('X');
   return (
     <SafeAreaView style={styles.body}>
-      <View style={styles.playerInfo}>
-        <Text style={styles.playerTxt}>Player X's Turn</Text>
+      <View style={[styles.playerInfo,{backgroundColor: active_player === 'X' ? '#007FF4' : '#F40075'}]}>
+        <Text style={styles.playerTxt}>Player {active_player}'s Turn</Text>
       </View>
     </SafeAreaView>
   );
@@ -29,10 +30,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    marginHorizontal: 20,
+    paddingVertical: 20,
+    marginTop: 30,
   },
   playerTxt: {
     fontSize: 20,
     fontWeight: '700',
     letterSpacing: 1.2,
+    color: '#fff',
   },
 });
