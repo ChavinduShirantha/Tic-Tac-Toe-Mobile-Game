@@ -29,55 +29,64 @@ const App = () => {
         <Text style={styles.playerTxt}>Player {active_player}'s Turn</Text>
       </View>
       <View style={styles.mainContainer}>
-        <Pressable style={styles.cell}>
+        {/*Top Left Cell*/}
+        <Pressable style={styles.cell_top_left}>
           <Image
             source={require('./assets/img/cross.png')}
             style={styles.icon}
           />
         </Pressable>
-        <Pressable style={styles.cell}>
+        {/*Top Mid Cell*/}
+        <Pressable style={styles.cell_top_mid}>
           <Image
             source={require('./assets/img/zero.png')}
             style={styles.icon}
           />
         </Pressable>
-        <Pressable style={styles.cell}>
+        {/*Top Right Cell*/}
+        <Pressable style={styles.cell_top_right}>
           <Image
             source={require('./assets/img/cross.png')}
             style={styles.icon}
           />
         </Pressable>
-        <Pressable style={styles.cell}>
+        {/*Mid Left Cell*/}
+        <Pressable style={styles.cell_mid_left}>
           <Image
             source={require('./assets/img/zero.png')}
             style={styles.icon}
           />
         </Pressable>
-        <Pressable style={styles.cell}>
+        {/*Mid Mid Cell*/}
+        <Pressable style={styles.cell_mid_mid}>
           <Image
             source={require('./assets/img/cross.png')}
             style={styles.icon}
           />
         </Pressable>
-        <Pressable style={styles.cell}>
+        {/*Mid Right Cell*/}
+        <Pressable style={styles.cell_mid_right}>
           <Image
             source={require('./assets/img/zero.png')}
             style={styles.icon}
           />
         </Pressable>
-        <Pressable style={styles.cell}>
+        {/*Bottom Left Cell*/}
+        <Pressable style={styles.cell_bottom_left}>
           <Image
             source={require('./assets/img/cross.png')}
             style={styles.icon}
           />
         </Pressable>
-        <Pressable style={styles.cell}>
+        {/*Bottom Mid Cell*/}
+        <Pressable style={styles.cell_bottom_mid}>
           <Image
             source={require('./assets/img/zero.png')}
             style={styles.icon}
           />
         </Pressable>
-        <Pressable style={styles.cell}>
+        {/*Bottom Right Cell*/}
+        <Pressable style={styles.cell_bottom_right}>
           <Image
             source={require('./assets/img/cross.png')}
             style={styles.icon}
@@ -113,14 +122,98 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     flexWrap: 'wrap',
+    marginTop: 50,
   },
-  cell: {
+  cell_top_left: {
     width: windowWidth / 3.2,
     height: windowWidth / 3.2,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 3,
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+    borderTopWidth: 4,
+    borderLeftWidth: 4,
+    borderTopLeftRadius: 10,
+  },
+  cell_top_mid: {
+    width: windowWidth / 3.2,
+    height: windowWidth / 3.2,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+    borderTopWidth: 4,
+  },
+  cell_top_right: {
+    width: windowWidth / 3.2,
+    height: windowWidth / 3.2,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+    borderTopWidth: 4,
+    borderTopRightRadius: 10,
+  },
+  cell_mid_left: {
+    width: windowWidth / 3.2,
+    height: windowWidth / 3.2,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+    borderLeftWidth: 4,
+  },
+  cell_mid_mid: {
+    width: windowWidth / 3.2,
+    height: windowWidth / 3.2,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+  },
+  cell_mid_right: {
+    width: windowWidth / 3.2,
+    height: windowWidth / 3.2,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+  },
+  cell_bottom_left: {
+    width: windowWidth / 3.2,
+    height: windowWidth / 3.2,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+    borderLeftWidth: 4,
+    borderBottomLeftRadius: 10,
+  },
+  cell_bottom_mid: {
+    width: windowWidth / 3.2,
+    height: windowWidth / 3.2,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+  },
+  cell_bottom_right: {
+    width: windowWidth / 3.2,
+    height: windowWidth / 3.2,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRightWidth: 4,
+    borderBottomWidth: 4,
+    borderBottomRightRadius: 10,
   },
   icon: {
     width: 62,
