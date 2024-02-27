@@ -92,7 +92,14 @@ const App = () => {
             style={styles.icon}
           />
         </Pressable>
+
       </View>
+      <Pressable style={styles.reloadBtn}>
+        <Image
+          source={require('./assets/img/replay.png')}
+          style={styles.reloadBtnIcon}
+        />
+      </Pressable>
     </SafeAreaView>
   );
 };
@@ -218,5 +225,14 @@ const styles = StyleSheet.create({
   icon: {
     width: 62,
     height: 62,
+  },
+  reloadBtn: {
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
+  },
+  reloadBtnIcon: {
+    height: 80,
+    width: 80,
   },
 });
