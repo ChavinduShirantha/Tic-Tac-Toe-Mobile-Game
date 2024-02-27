@@ -6,10 +6,19 @@
  */
 
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Pressable, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Pressable,
+  Image,
+  Dimensions,
+} from 'react-native';
 
+const windowWidth = Dimensions.get('window').width;
 const App = () => {
-  const [active_player,setActive_player] = useState('X');
+  const [active_player, setActive_player] = useState('X');
   return (
     <SafeAreaView style={styles.body}>
       <View
@@ -106,8 +115,8 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   cell: {
-    width: 120,
-    height: 120,
+    width: windowWidth / 3.2,
+    height: windowWidth / 3.2,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
