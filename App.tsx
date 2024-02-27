@@ -75,9 +75,11 @@ const App = () => {
     if (winner === 'X') {
       // @ts-ignore
       alert('Player X Won 🎉🥳!');
+      resetMarkers();
     } else if (winner === 'O') {
       // @ts-ignore
       alert('Player O Won 🎉🥳!');
+      resetMarkers();
     }
   }, [markers]);
 
