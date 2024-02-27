@@ -43,6 +43,9 @@ const App = () => {
       }
     }
   };
+  const resetMarkers = () => {
+    setMarkers([null, null, null, null, null, null, null, null, null]);
+  };
 
   return (
     <SafeAreaView style={styles.body}>
@@ -132,7 +135,9 @@ const App = () => {
           )}
         </Pressable>
         {/*Mid Right Cell*/}
-        <Pressable style={styles.cell_mid_right} onPress={() => markPosition(5)}>
+        <Pressable
+          style={styles.cell_mid_right}
+          onPress={() => markPosition(5)}>
           {markers[5] === 'X' && (
             <Image
               source={require('./assets/img/cross.png')}
@@ -147,7 +152,9 @@ const App = () => {
           )}
         </Pressable>
         {/*Bottom Left Cell*/}
-        <Pressable style={styles.cell_bottom_left} onPress={() => markPosition(6)}>
+        <Pressable
+          style={styles.cell_bottom_left}
+          onPress={() => markPosition(6)}>
           {markers[6] === 'X' && (
             <Image
               source={require('./assets/img/cross.png')}
@@ -162,7 +169,9 @@ const App = () => {
           )}
         </Pressable>
         {/*Bottom Mid Cell*/}
-        <Pressable style={styles.cell_bottom_mid} onPress={() => markPosition(7)}>
+        <Pressable
+          style={styles.cell_bottom_mid}
+          onPress={() => markPosition(7)}>
           {markers[7] === 'X' && (
             <Image
               source={require('./assets/img/cross.png')}
@@ -177,7 +186,9 @@ const App = () => {
           )}
         </Pressable>
         {/*Bottom Right Cell*/}
-        <Pressable style={styles.cell_bottom_right} onPress={() => markPosition(8)}>
+        <Pressable
+          style={styles.cell_bottom_right}
+          onPress={() => markPosition(8)}>
           {markers[8] === 'X' && (
             <Image
               source={require('./assets/img/cross.png')}
@@ -192,7 +203,7 @@ const App = () => {
           )}
         </Pressable>
       </View>
-      <Pressable style={styles.reloadBtn}>
+      <Pressable style={styles.reloadBtn} onPress={() => resetMarkers()}>
         <Image
           source={require('./assets/img/replay.png')}
           style={styles.reloadBtnIcon}
