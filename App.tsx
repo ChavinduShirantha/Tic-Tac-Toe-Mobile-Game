@@ -5,7 +5,7 @@
  * @format
  */
 
-import React, {useState} from 'react';
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -46,6 +46,40 @@ const App = () => {
   const resetMarkers = () => {
     setMarkers([null, null, null, null, null, null, null, null, null]);
   };
+  // @ts-ignore
+  const calculateWinner = (squares) => {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [2, 4, 6],
+      [0, 4, 8],
+    ];
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c] = lines[i];
+      if (
+        squares[a] &&
+        squares[a] === squares[b] &&
+        squares[a] === squares[c]
+      ) {
+        return squares[a];
+      }
+    }
+    return null;
+  };
+  useEffect(() => {
+    const winner = calculateWinner(markers);
+    if (winner === 'X') {
+      // @ts-ignore
+      alert('Player X Won 🎉🥳!');
+    } else if (winner === 'O') {
+      // @ts-ignore
+      alert('Player O Won 🎉🥳!');
+    }
+  }, [markers]);
 
   return (
     <SafeAreaView style={styles.body}>
